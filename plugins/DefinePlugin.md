@@ -1,15 +1,19 @@
-# DefinePlugin
+# DefinePlugin 
 
 [英文文档](https://webpack.js.org/plugins/define-plugin/)
 [中文文档](https://doc.webpack-china.org/plugins/define-plugin/)
 
+### 功能
+使用指定的code替换掉代码中的标识符key
+
 ### 用法
 ```javascript
 new webpack.DefinePlugin({
-  key1: code1, // code将替换掉代码中的标识符key
+  key1: code1,
   key2: code2
 })
 ```
+
 ### 主要代码
 ```javascript
 class DefinePlugin {

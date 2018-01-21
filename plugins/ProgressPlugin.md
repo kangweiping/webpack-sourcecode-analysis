@@ -1,6 +1,10 @@
-# ProgressPlugin
+# ProgressPlugin 
 
 文档无
+
+### 功能
+在控制台打印编译信息
+
 ### 用法
 ```javascript
 new webpack.ProgressPlugin({
@@ -8,6 +12,7 @@ new webpack.ProgressPlugin({
   handler: Function(percentage, msg) // 自定义打印函数
 })
 ```
+
 ### 主要代码
 ```javascript
 class ProgressPlugin {
@@ -19,7 +24,7 @@ class ProgressPlugin {
     }
     options = options || {};
     this.profile = options.profile; 
-    this.handler = options.handler; 
+    this.handler = options.handler; // options.handler
   }
 
   apply(compiler) {
@@ -46,7 +51,8 @@ class ProgressPlugin {
       msg = `${percentage}% ${msg}`;
       process.stderr.write(msg);
       
-      if(profile) { /* 打印各时间段耗时 */
+      if(profile) { /* 打印各时间段耗时 options.profile */
+        // 打印耗时代码
       }
     }
   }
