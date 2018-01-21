@@ -1,7 +1,14 @@
 # ProgressPlugin
 
 文档无
-
+### 用法
+```javascript
+new webpack.ProgressPlugin({
+  profile: Boolean, // 打印耗时，配置了handler时无效
+  handler: Function(percentage, msg) // 自定义打印函数
+})
+```
+### 主要代码
 ```javascript
 class ProgressPlugin {
   constructor(options) {
@@ -11,8 +18,8 @@ class ProgressPlugin {
       };
     }
     options = options || {};
-    this.profile = options.profile; // 打印耗时
-    this.handler = options.handler; // 自定义打印函数
+    this.profile = options.profile; 
+    this.handler = options.handler; 
   }
 
   apply(compiler) {
