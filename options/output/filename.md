@@ -53,7 +53,7 @@ const REGEXP_HASH = /\[hash(?::(\d+))?\]/gi,
   REGEXP_QUERY = /\[query\]/gi,
   REGEXP_FILEBASE = /\[filebase\]/gi;
   
-const replacePathVariables = (path, data) => {
+const replacePathVariables = (path, data) => { // 使用实际的值替换占位符
   const chunk = data.chunk;
   const chunkId = chunk && chunk.id;
   const chunkName = chunk && (chunk.name || chunk.id);
@@ -80,7 +80,7 @@ class TemplatedPathPlugin {
     compiler.plugin("compilation", compilation => {
       const mainTemplate = compilation.mainTemplate;
 
-      mainTemplate.plugin("asset-path", replacePathVariables);
+      mainTemplate.plugin("asset-path", replacePathVariables); // 注册plugin
 
       // ...
     });
